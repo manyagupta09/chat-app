@@ -11,14 +11,14 @@ export const getUsersForSidebar = async (req, res) =>{
 
         //count number of messages not seen
         const unseenMessages = {}
-        const promises = filteredUsers.map(async (user) =>{
+        const promises = users.map(async (user) =>{
             const messages = await Message.find({senderId: user._id, receiverId: userId, seen: false})
             if(messages.length > 0){
                 unseenMessages[user._id] = messages.length;
             }
         })
         await Promise.all(promises);
-        res.json({success: true, filteredUsers, unseenMessages});
+        res.json({success: true, users, unseenMessages});
 
     } catch (error) {
         console.log(error.message);

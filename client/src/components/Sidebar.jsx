@@ -7,10 +7,10 @@ import { ChatContext } from '../../context/ChatContext';
 const Sidebar = () => {
   const {
     getUsers,
-    users,
+    users = [],
     selectedUser,
     setSelectedUser,
-    unseenMessages,
+    unseenMessages = {},
   } = useContext(ChatContext);
 
   const { logout, onlineUsers = [] } = useContext(AuthContext);

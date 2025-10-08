@@ -35,7 +35,7 @@ const ProfilePage = () => {
 
   return (
     <div className="min-h-screen bg-cover bg-no-repeat flex items-center justify-center">
-      <div className="w-5/6 max-w-2xl backdrop-blur-2xl text-gray-300 border-2 border-gray-600 flex items-center justify-between max-sm:flex-col-reverse rounded-lg">
+      <div className="w-5/6 max-w-2xl backdrop-blur-2xl text-gray-300 border-2 border-gray-100 flex items-center justify-between max-sm:flex-col-reverse rounded-lg">
         <form onSubmit={handleSubmit} className="flex flex-col gap-5 p-10 flex-1">
           <h3 className="text-lg">Profile Details</h3>
 
@@ -63,7 +63,7 @@ const ProfilePage = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="p-2 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-violet-500"
+            className="p-2 border border-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-[#70e000]"
           />
 
           {/* Bio input */}
@@ -73,12 +73,12 @@ const ProfilePage = () => {
             onChange={(e) => setBio(e.target.value)}
             required
             rows={4}
-            className="p-2 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-violet-500"
+            className="p-2 border border-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-[#70e000]"
           />
 
           <button
             type="submit"
-            className="bg-gradient-to-r from-purple-400 to-violet-600 text-white p-2 rounded-full text-lg cursor-pointer"
+            className="bg-gradient-to-r from-[#ccff33] to-[#70e000] text-white p-2 rounded-full text-lg cursor-pointer"
           >
             Save
           </button>
@@ -86,9 +86,9 @@ const ProfilePage = () => {
 
         {/* Right side image */}
         <img
-          src={authUser?.profilePic || assets.logo_icon}
+          src={authUser?.profilePic || assets.icon_large}
           alt="profile"
-          className={`max-w-44 aspect-square rounded-full mx-10 max-sm:mt-10 ${selectedImg ? 'rounded-full': ''}`}
+          className={`max-w-48 aspect-square rounded-full  mx-10 max-sm:mt-10 ${selectedImg ? 'rounded-full': ''}`}
         />
       </div>
     </div>
